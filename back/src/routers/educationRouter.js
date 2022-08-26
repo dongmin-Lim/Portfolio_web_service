@@ -1,6 +1,5 @@
 import is from "@sindresorhus/is";
 import { Router } from "express";
-import { login_required } from "../middlewares/login_required";
 import { educationService } from "../services/educationService";
 import { Education } from "../db";
 
@@ -115,9 +114,8 @@ educationRouter.delete(
   async (req, res, next) => {
     try {
       const edu_id = req.params.id;
-      await educationService
-        .deleteEducation({ edu_id })
-        .then(() => console.log("done"));
+      await educationService.deleteEducation({ edu_id })
+      res.sendStatus(204)
     } catch (error) {
       next(error);
     }

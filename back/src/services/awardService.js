@@ -58,9 +58,7 @@ class awardService {
   }
 
   static async deleteAward({ award_id }) {
-    const award = await Award.delete({ award_id });
-    console.log(award);
-    return award;
+    await Award.delete({ award_id });
   }
 }
 

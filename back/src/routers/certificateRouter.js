@@ -109,7 +109,7 @@ certificateRouter.delete(
 
       await certificateService.deleteCertificate({ certificate_id })
 
-      res.send(204)
+      res.sendStatus(204)
     } catch (error) {
       next(error)
     }

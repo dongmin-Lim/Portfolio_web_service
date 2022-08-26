@@ -1,12 +1,11 @@
 import is from "@sindresorhus/is";
 import { Router } from "express";
-import { login_required } from "../middlewares/login_required";
 import { awardService } from "../services/awardService";
 import { Award } from "../db";
 
 const awardRouter = Router();
 
-awardRouter.post("/award/create", login_required, async (req, res, next) => {
+awardRouter.post("/award/create", async (req, res, next) => {
   try {
     if (is.emptyObject(req.body)) {
       throw new Error(
@@ -44,7 +43,7 @@ awardRouter.post("/award/create", login_required, async (req, res, next) => {
   }
 });
 
-awardRouter.put("/awards/:id", login_required, async (req, res, next) => {
+awardRouter.put("/awards/:id", async (req, res, next) => {
   try {
     // award의 user_id와 요청을 보낸 user의 id가 동일한지 체크!!!
     // if (award.user_id.id !== req.user.id) {
@@ -104,10 +103,9 @@ awardRouter.delete(
   async (req, res, next) => {
     try {
       const award_id = req.params.id;
-      await awardService
-        .deleteAward({ award_id })
-        .then(() => console.log("done"));
-      res.send(204);
+      await awardService.deleteAward({ award_id })
+
+      res.sendStatus(204);
     } catch (error) {
       next(error);
     }

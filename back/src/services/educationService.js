@@ -66,8 +66,8 @@ class educationService {
   }
 
   static async deleteEducation({ edu_id }) {
-    const education = await Education.delete({ edu_id });
-    return education;
+    await Education.delete({ edu_id });
+  
   }
 }
 

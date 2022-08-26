@@ -79,13 +79,10 @@ userAuthRouter.get(
       // jwt토큰에서 추출된 사용자 id를 가지고 db에서 사용자 정보를 찾음.
       // console.log(req);
       const user_id = req.currentUserId;
-      // console.log(req.currentUserId);
 
       const currentUserInfo = await userAuthService.getUserInfo({
         user_id,
       });
-
-      console.log(currentUserInfo);
 
       if (currentUserInfo.errorMessage) {
         throw new Error(currentUserInfo.errorMessage);

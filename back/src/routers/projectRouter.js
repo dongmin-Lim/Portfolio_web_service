@@ -89,7 +89,7 @@ projectRouter.delete(
 
       await projectService.deleteProject({ project_id })
 
-      res.send(204)
+      res.sendStatus(204)
     } catch (error) {
       next(error)
     }
