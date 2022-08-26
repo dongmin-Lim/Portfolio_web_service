@@ -4,14 +4,9 @@ import { v4 as uuidv4 } from "uuid";
 
 class certificateService {
   static async addCertificate({ user_id, title, description, when_date }) {
-    const user = await User.findById({ user_id })
-    
-    Certificate.findPopulate({ user_id: user._id })
-
     const id = uuidv4()
 
-
-    const newCertificate = { user_id: user._id, id, title, description, when_date };
+    const newCertificate = { user_id, id, title, description, when_date };
 
     // db에 저장
     const createdNewCertificate = await Certificate.create({ newCertificate });
@@ -27,8 +22,7 @@ class certificateService {
   }
 
   static async deleteCertificate({ certificate_id }) {
-    const certificate = await Certificate.delete({ certificate_id })
-    return certificate
+    await Certificate.delete({ certificate_id })
   }
 
   static async setCertificate({ user_id, toUpdate }) {

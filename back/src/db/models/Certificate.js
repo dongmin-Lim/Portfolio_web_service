@@ -11,15 +11,6 @@ class Certificate {
     return certificate;
   }
 
-  static async findPopulate({ user_id }) {
-    const certificate = await CertificateModel.findOne({ user_id })
-                          .populate("user_id")
-                          .exec((err, data)=>{
-                            console.log(data)
-                          })
-    return certificate;
-  }
-
   static async findAll({ user_id }) {
     const certificates = await CertificateModel.find({ user_id: user_id });
     return certificates;

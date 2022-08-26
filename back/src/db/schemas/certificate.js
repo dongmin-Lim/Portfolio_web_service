@@ -3,9 +3,9 @@ import { Schema, model } from "mongoose";
 const CertificateSchema = new Schema(
   {
     user_id: {
-        type: Schema.Types.ObjectId,
+        type: String,
         required: true,
-        ref: "user",
+        ref: "User"
       },
     id: {
       type: String,
