@@ -8,7 +8,6 @@ const educationRouter = Router();
 
 educationRouter.post(
   "/education/create",
-  login_required,
   async (req, res, next) => {
     // request가 어떻게 들어오는지 알아보자!!!
     try {
@@ -48,7 +47,6 @@ educationRouter.post(
 
 educationRouter.put(
   "/educations/:id",
-  login_required,
   async (req, res, next) => {
     try {
       // 작성자와 로그인된 사용자가 일치하는지 확인
@@ -94,7 +92,6 @@ educationRouter.put(
 // 특정 user의 모든 학력 내역 get
 educationRouter.get(
   "/educationlist/:user_id",
-  login_required,
   async (req, res, next) => {
     try {
       const user_id = req.params.user_id;
@@ -115,7 +112,6 @@ educationRouter.get(
 
 educationRouter.delete(
   "/educations/:id/delete",
-  login_required,
   async (req, res, next) => {
     try {
       const edu_id = req.params.id;

@@ -84,7 +84,6 @@ awardRouter.put("/awards/:id", login_required, async (req, res, next) => {
 // 특정 user의 모든 수상내역 get
 awardRouter.get(
   "/awardlist/:user_id",
-  login_required,
   async (req, res, next) => {
     try {
       const user_id = req.params.user_id;
@@ -102,7 +101,6 @@ awardRouter.get(
 
 awardRouter.delete(
   "/awards/:id/delete",
-  login_required,
   async (req, res, next) => {
     try {
       const award_id = req.params.id;
