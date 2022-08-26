@@ -25,27 +25,27 @@ class certificateService {
     await Certificate.delete({ certificate_id })
   }
 
-  static async setCertificate({ user_id, toUpdate }) {
+  static async setCertificate({ certificate_id, toUpdate }) {
     // 우선 해당 id 의 유저가 db에 존재하는지 여부 확인
-    let certificate = await Certificate.findById({ user_id });
+    let certificate = await Certificate.findById({ certificate_id });
 
     // 업데이트 대상에 name이 있다면, 즉 name 값이 null 이 아니라면 업데이트 진행
     if (toUpdate.title) {
       const fieldToUpdate = "title";
       const newValue = toUpdate.title;
-      certificate = await Certificate.update({ user_id, fieldToUpdate, newValue });
+      certificate = await Certificate.update({ certificate_id, fieldToUpdate, newValue });
     }
 
     if (toUpdate.description) {
       const fieldToUpdate = "description";
       const newValue = toUpdate.description;
-      certificate = await Certificate.update({ user_id, fieldToUpdate, newValue });
+      certificate = await Certificate.update({ certificate_id, fieldToUpdate, newValue });
     }
 
     if (toUpdate.when_date) {
         const fieldToUpdate = "when_date";
         const newValue = toUpdate.from_date;
-        certificate = await Certificate.update({ user_id, fieldToUpdate, newValue });
+        certificate = await Certificate.update({ certificate_id, fieldToUpdate, newValue });
     }
 
     return certificate;
