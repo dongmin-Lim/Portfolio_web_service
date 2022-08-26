@@ -9,9 +9,9 @@ function AwardAdd({ setIsAdd, setList, list }) {
   function submit() {
     if (title && content) {
       setList([...list, { id: nextId.current, title, content }]);
-      nextId.current += 1;
       setTitle("");
       setContent("");
+      nextId.current += 1;
       alert("추가 되었습니다.");
     } else alert("내용을 입력해주세요.");
     setIsAdd(false);

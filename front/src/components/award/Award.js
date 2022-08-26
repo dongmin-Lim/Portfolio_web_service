@@ -36,6 +36,7 @@ function Award() {
                     list={list}
                     setList={setList}
                     value={value}
+                    index={index}
                   />
                 ) : (
                   <div>
@@ -59,7 +60,6 @@ function Award() {
             ))}
           </Form>
           {/* isAdd이 true일 경우 추가 컴포넌트 출력 */}
-
           {isAdd ? (
             <AwardAdd setIsAdd={setIsAdd} list={list} setList={setList} />
           ) : (
