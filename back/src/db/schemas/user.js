@@ -1,11 +1,9 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, Mongoose } from "mongoose";
+const id = require('./types/id');
 
 const UserSchema = new Schema(
   {
-    id: {
-      type: String,
-      required: true,
-    },
+    id,
     email: {
       type: String,
       required: true,
@@ -29,6 +27,6 @@ const UserSchema = new Schema(
   }
 );
 
-const UserModel = model("User", UserSchema);
+const UserModel = model("user", UserSchema);
 
 export { UserModel };

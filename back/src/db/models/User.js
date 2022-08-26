@@ -11,6 +11,12 @@ class User {
     return user;
   }
 
+  static async findPopulate({ user_id }) {
+    const user = await UserModel.findOne({ user_id })
+                          
+    return user;
+  }
+
   static async findById({ user_id }) {
     const user = await UserModel.findOne({ id: user_id });
     return user;
