@@ -41,14 +41,14 @@ const Project = ({ portfolioOwnerId, isEditable }) => {
         // axios.get('dummy.json').then(v => setProjects(v.data.projects));
         setProjects([
             {
-                "name": "더미 프로젝트 1",
-                "text": "더미 프로젝트 1의 설명 내용 입니다...",
+                "name": "더미 프로젝트 2",
+                "text": "더미 프로젝트 2의 설명 내용 입니다...",
                 "skill": "JS React.JS Mongo.DB Bootstrap",
                 "link": null
             },
             {
-                "name": "더미 프로젝트 2",
-                "text": "더미 프로젝트 2의 설명 내용 입니다...",
+                "name": "더미 프로젝트 1",
+                "text": "더미 프로젝트 1의 설명 내용 입니다...",
                 "skill": "TS React.JS Mongo.DB AntDesign",
                 "link": null
             }

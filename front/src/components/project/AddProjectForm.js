@@ -30,7 +30,7 @@ const AddProjectForm = ({ setAddToggle, projects, setProjects }) => {
         //dispatch로 프로젝트를 추가하도록 userState를 업데이트 합니다.
         if (resOk) {
             setProjects(
-                [...projects, project]
+                [project, ...projects]
             );
         }
     }
