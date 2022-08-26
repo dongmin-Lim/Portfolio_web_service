@@ -107,9 +107,9 @@ certificateRouter.delete(
     try {
       const certificate_id = req.params.id
 
-      const deletedCertificate = await certificateService.deleteCertificate({ certificate_id })
+      await certificateService.deleteCertificate({ certificate_id })
 
-      res.status(200).send(deletedCertificate)
+      res.send(204)
     } catch (error) {
       next(error)
     }
