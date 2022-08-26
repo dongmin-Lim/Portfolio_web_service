@@ -52,7 +52,7 @@ class userAuthService {
     const secretKey = process.env.JWT_SECRET_KEY || "jwt-secret-key";
     const token = jwt.sign({ user_id: user.id }, secretKey);
 
-    // 반환할 loginuser 객체를 위한 변수 설정
+    // 반환할 loginUser 객체를 위한 변수 설정
     const id = user.id;
     const name = user.name;
     const description = user.description;
@@ -80,8 +80,7 @@ class userAuthService {
 
     // db에서 찾지 못한 경우, 에러 메시지 반환
     if (!user) {
-      const errorMessage =
-        "가입 내역이 없습니다. 다시 한 번 확인해 주세요.";
+      const errorMessage = "가입 내역이 없습니다. 다시 한 번 확인해 주세요.";
       return { errorMessage };
     }
 
@@ -114,7 +113,9 @@ class userAuthService {
   }
 
   static async getUserInfo({ user_id }) {
+    console.log(user_id);
     const user = await User.findById({ user_id });
+    console.log(user_id);
 
     // db에서 찾지 못한 경우, 에러 메시지 반환
     if (!user) {
