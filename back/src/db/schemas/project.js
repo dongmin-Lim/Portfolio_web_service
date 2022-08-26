@@ -3,6 +3,10 @@ import { Schema, model } from "mongoose";
 
 const ProjectSchema = new Schema(
   {
+    user_id: {
+      type: String,
+      required: true,
+    },
     id: {
         type: String,
         required: true,
