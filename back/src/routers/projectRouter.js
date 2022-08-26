@@ -87,9 +87,9 @@ projectRouter.delete(
     try {
       const project_id = req.params.id
 
-      const deletedProject = await projectService.deleteProject({ project_id })
+      await projectService.deleteProject({ project_id })
 
-      res.status(200).send(deletedProject)
+      res.send(204)
     } catch (error) {
       next(error)
     }
