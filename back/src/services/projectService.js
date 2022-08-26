@@ -21,8 +21,7 @@ class projectService {
   }
 
   static async deleteProject({ project_id }) {
-    const project = await Project.delete({ project_id })
-    return project
+    await Project.delete({ project_id })
   }
 
   static async setProject({ project_id, toUpdate }) {
