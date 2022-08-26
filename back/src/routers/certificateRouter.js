@@ -12,7 +12,7 @@ certificateRouter.post("/certificate/create", async function (req, res, next) {
       );
     }
     // req (request) 에서 데이터 가져오기
-    const user_id = req.currentUserId
+    const user_id = req.currentUserId         
     const title = req.body.title;
     const description = req.body.description;
     const when_date = req.body.when_date;

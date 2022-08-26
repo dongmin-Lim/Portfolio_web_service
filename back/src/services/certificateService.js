@@ -4,9 +4,12 @@ import { v4 as uuidv4 } from "uuid";
 
 class certificateService {
   static async addCertificate({ user_id, title, description, when_date }) {
-    const user = await User.findPopulate({ user_id })
+    const user = await User.findById({ user_id })
+    
+    Certificate.findPopulate({ user_id: user._id })
 
     const id = uuidv4()
+
 
     const newCertificate = { user_id: user._id, id, title, description, when_date };
 

@@ -1,5 +1,4 @@
 import { Schema, model } from "mongoose";
-const user = require("./user")
 
 const CertificateSchema = new Schema(
   {
