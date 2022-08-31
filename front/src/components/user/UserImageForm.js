@@ -2,7 +2,7 @@ import { useCallback, useRef } from "react";
 import axios from "axios";
 import { Button } from "react-bootstrap";
 
-const UserImageForm = ({ user, setUser, setImagePath }) => {
+const UserImageForm = ({ user, setUser }) => {
 
     //image 관련 함수들
     const imageInput = useRef();
@@ -20,14 +20,12 @@ const UserImageForm = ({ user, setUser, setImagePath }) => {
             .then(res => res.data)
             .then(data => {
                 console.log(data);
-                // setImagePath(data);
                 setUser({ ...user, imagePath: data });
             });
         //똑같은 파일을 올렸을때 onChange가 인식 못하는걸 방지
         e.target.value = "";
     };
     const onRemoveImage = () => {
-        // setImagePath('');
         setUser(
             {
                 ...user,

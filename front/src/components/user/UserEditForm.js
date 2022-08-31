@@ -12,7 +12,6 @@ function UserEditForm({ user, setIsEditing, setUser }) {
   //useState로 description 상태를 생성함.
   const [description, setDescription] = useState(user.description);
   //user 프로필 이미지가 저장되는 경로
-  const [imagePath, setImagePath] = useState('');
   const handleSubmit = async (e) => {
 
     e.preventDefault();
@@ -22,11 +21,12 @@ function UserEditForm({ user, setIsEditing, setUser }) {
       name,
       email,
       description,
+      imagePath: user.imagePath,
     });
     // 유저 정보는 response의 data임.
     const updatedUser = res.data;
     // 해당 유저 정보로 user을 세팅함.
-    setUser({ ...updatedUser, imagePath });
+    setUser({ ...updatedUser });
 
     // isEditing을 false로 세팅함.
     setIsEditing(false);
@@ -65,8 +65,7 @@ function UserEditForm({ user, setIsEditing, setUser }) {
 
           <UserImageForm
             user={user}
-            setUser={(v) => { setUser(v) }}
-            setImagePath={(v) => { setImagePath(v) }} />
+            setUser={(v) => { setUser(v) }} />
 
           <Form.Group as={Row} className="mt-3 text-center">
             <Col sm={{ span: 20 }}>

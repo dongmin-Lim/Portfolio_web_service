@@ -10,11 +10,11 @@ function UserCard({ user, setIsEditing, isEditable, isNetwork }) {
     <Card className="mb-2 ms-3 mr-5" style={{ width: "18rem" }}>
       <Card.Body>
         <Row className="justify-content-md-center">
-          <Card.Img
-            style={{ width: "10rem", height: "8rem" }}
-            className="mb-3"
-            src={backUrl + user?.imagePath}
-            alt="랜덤 고양이 사진"
+          <img
+            style={{ height: "15rem", width: '15rem', objectFit: 'contain' }}
+            className="mt-3 mb-3"
+            src={user?.imagePath ? backUrl + user?.imagePath : "https://ifh.cc/g/DS2Nqo.jpg"}
+            alt="프로필 사진"
           />
         </Row>
         <Card.Title>{user?.name}</Card.Title>
