@@ -63,7 +63,6 @@ projectRouter.put(
 
       const project = await Project.findByProjectId({ project_id });
 
-      // !!!
       if (project.user_id !== req.currentUserId) {
         throw new Error("권한이 없습니다.");
       }
@@ -100,7 +99,6 @@ projectRouter.delete(
       const project_id = req.params.id;
       const project = await Project.findByProjectId({ project_id });
 
-      // !!!
       if (project.user_id !== req.currentUserId) {
         throw new Error("권한이 없습니다.");
       }

@@ -3,7 +3,7 @@ import { Certificate } from "../db";
 class certificateService {
   // 새로운 자격증 추가
   static async addCertificate({ user_id, title, description, when_date }) {
-    const newCertificate = {
+    try {const newCertificate = {
       user_id,
       title,
       description,
@@ -14,6 +14,10 @@ class certificateService {
     createdNewCertificate.errorMessage = null;
 
     return createdNewCertificate;
+    } catch (error) {
+      const errorMessage ="모든 항목을 입력해주세요.";
+      return { errorMessage };
+    }
   }
   
   // 해당 유저의 모든 자격증 내용 가져오기
@@ -28,9 +32,9 @@ class certificateService {
     let certificate = await Certificate.findByCertificateId({ certificate_id });
 
     // db에서 찾지 X, 에러
-    if (!award) {
+    if (!certificate) {
       const errorMessage =
-        "해당 자격증내역이 존재하지 않습니다. 다시 한 번 확인해 주세요.";
+        "해당 자격증이 존재하지 않습니다. 다시 한 번 확인해 주세요.";
       return { errorMessage };
     }
 

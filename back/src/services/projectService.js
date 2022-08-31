@@ -3,7 +3,7 @@ import { Project } from "../db";
 class projectService {
   // 새로운 자격증 추가
   static async addProject({ user_id, title, description, skill, link, imagePath, from_date, to_date }) {
-    const newProject = {
+    try {const newProject = {
       user_id,
       title,
       description,
@@ -18,6 +18,10 @@ class projectService {
     createdNewProject.errorMessage = null;
 
     return createdNewProject;
+    } catch (error) {
+      const errorMessage ="모든 항목을 입력해주세요.";
+      return { errorMessage };
+    }
   }
   
   // 해당 유저의 모든 프로젝트 내용 가져오기
@@ -31,6 +35,13 @@ class projectService {
   static async setProject({ project_id, toUpdate }) {
     // 우선 해당 id 의 유저가 db에 존재하는지 여부 확인
     let project = await Project.findByProjectId({ project_id });
+
+    // db에서 찾지 X, 에러
+    if (!project) {
+      const errorMessage =
+        "해당 프로젝트가 존재하지 않습니다. 다시 한 번 확인해 주세요.";
+      return { errorMessage };
+    }
 
     // 업데이트 대상을 확인 : title, description, from_date, to_date
     if (toUpdate.title) {

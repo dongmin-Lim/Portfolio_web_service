@@ -15,7 +15,7 @@ certificateRouter.post(
       );
     }
 
-    const { title, description, when_date} = req.body.title;
+    const { title, description, when_date} = req.body;
 
     const user_id = req.currentUserId;
 
@@ -60,9 +60,8 @@ certificateRouter.put(
   try {
     const certificate_id = req.params.id;
 
-    const certificate = await Certificate.findById({ certificate_id });
+    const certificate = await Certificate.findByCertificateId({ certificate_id });
 
-    // !!!
     if (certificate.user_id !== req.currentUserId) {
       throw new Error("권한이 없습니다.");
     }
@@ -78,9 +77,9 @@ certificateRouter.put(
       toUpdate,
     });
 
-    // if (updatedCertificate.errorMessage) {
-    //   throw new Error(updatedCertificate.errorMessage);
-    // }
+    if (updatedCertificate.errorMessage) {
+      throw new Error(updatedCertificate.errorMessage);
+    }
 
     res.status(200).json(updatedCertificate);
   } catch (error) {
@@ -95,7 +94,6 @@ certificateRouter.delete(
     const certificate_id = req.params.id;
     const certificate = await Certificate.findByCertificateId({ certificate_id });
 
-    // !!!
     if (certificate.user_id !== req.currentUserId) {
       throw new Error("권한이 없습니다.");
     }
