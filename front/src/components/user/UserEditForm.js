@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Button, Form, Card, Col, Row } from "react-bootstrap";
 import * as Api from "../../api";
 
+import UserImageForm from "./UserImageForm";
+
 function UserEditForm({ user, setIsEditing, setUser }) {
   //useState로 name 상태를 생성함.
   const [name, setName] = useState(user.name);
@@ -9,8 +11,10 @@ function UserEditForm({ user, setIsEditing, setUser }) {
   const [email, setEmail] = useState(user.email);
   //useState로 description 상태를 생성함.
   const [description, setDescription] = useState(user.description);
-
+  //user 프로필 이미지가 저장되는 경로
+  const [imagePath, setImagePath] = useState('');
   const handleSubmit = async (e) => {
+
     e.preventDefault();
 
     // "users/유저id" 엔드포인트로 PUT 요청함.
@@ -22,7 +26,7 @@ function UserEditForm({ user, setIsEditing, setUser }) {
     // 유저 정보는 response의 data임.
     const updatedUser = res.data;
     // 해당 유저 정보로 user을 세팅함.
-    setUser(updatedUser);
+    setUser({ ...updatedUser, imagePath });
 
     // isEditing을 false로 세팅함.
     setIsEditing(false);
@@ -58,6 +62,11 @@ function UserEditForm({ user, setIsEditing, setUser }) {
               onChange={(e) => setDescription(e.target.value)}
             />
           </Form.Group>
+
+          <UserImageForm
+            user={user}
+            setUser={(v) => { setUser(v) }}
+            setImagePath={(v) => { setImagePath(v) }} />
 
           <Form.Group as={Row} className="mt-3 text-center">
             <Col sm={{ span: 20 }}>

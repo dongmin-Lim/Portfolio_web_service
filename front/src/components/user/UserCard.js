@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { Card, Row, Button, Col } from "react-bootstrap";
+import { useEffect } from "react";
 
 function UserCard({ user, setIsEditing, isEditable, isNetwork }) {
   const navigate = useNavigate();
+  const backUrl = 'http://localhost:3333/';
+  useEffect(() => { console.log(user) }, [user]);
   return (
     <Card className="mb-2 ms-3 mr-5" style={{ width: "18rem" }}>
       <Card.Body>
@@ -10,8 +13,8 @@ function UserCard({ user, setIsEditing, isEditable, isNetwork }) {
           <Card.Img
             style={{ width: "10rem", height: "8rem" }}
             className="mb-3"
-            src="http://placekitten.com/200/200"
-            alt="랜덤 고양이 사진 (http://placekitten.com API 사용)"
+            src={backUrl + user?.imagePath}
+            alt="랜덤 고양이 사진"
           />
         </Row>
         <Card.Title>{user?.name}</Card.Title>
