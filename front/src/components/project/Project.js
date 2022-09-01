@@ -2,7 +2,6 @@ import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import * as API from "../../api";
 import "./Project.css";
-import styled from "styled-components";
 
 //bootstrap
 import Button from "react-bootstrap/Button";
@@ -74,10 +73,10 @@ const Project = ({ portfolioOwnerId, isEditable }) => {
       text={mode.toLowerCase() === "light" ? "dark" : "white"}
     >
       {!addToggle && (
-        <>
+        <div className={mode}>
           <h2>🧑🏻‍💻 프로젝트</h2>
           <div className="dropdown-divider"></div>
-          <Accordion className="mt-3" defaultActiveKey={0}>
+          <Accordion defaultActiveKey={0}>
             {projects?.map((v, i) => (
               <Accordion.Item eventKey={i} key={"item" + v.name + v.text}>
                 <Accordion.Header
@@ -180,7 +179,7 @@ const Project = ({ portfolioOwnerId, isEditable }) => {
               +
             </Button>
           </div>
-        </>
+        </div>
       )}
       {addToggle && (
         <AddProjectForm
