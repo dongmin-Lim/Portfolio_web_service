@@ -60,8 +60,7 @@ yarn start
 ### 필수 기능 구현
 
 ##### award MVP  
-<img src="/uploads/82dcf2208f89d0df52686d816fbf9052/스크린샷_2022-09-01_14.38.03.png" width="300" height="auto">
-![스크린샷_2022-09-01_14.38.03](/uploads/82dcf2208f89d0df52686d816fbf9052/스크린샷_2022-09-01_14.38.03.png){: width="300" }
+<img src="/uploads/82dcf2208f89d0df52686d816fbf9052/스크린샷_2022-09-01_14.38.03.png" width="700" height="auto">
 
 Award, AwardAdd, AwardEdit 컴포넌트로 구성되어있습니다.
 - Award : 모든 수상이력을 나타내는 컴포넌트입니다.
