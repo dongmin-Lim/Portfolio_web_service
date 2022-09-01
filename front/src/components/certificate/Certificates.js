@@ -28,7 +28,6 @@ function Certificates({ portfolioOwnerId, isEditable }) {
             key={certificate.id}
             certificate={certificate}
             setCertificateList={setCertificateList}
-            certificateList={certificateList}
             isEditable={isEditable}
           />
         ))}
@@ -37,7 +36,6 @@ function Certificates({ portfolioOwnerId, isEditable }) {
           <CertificateAddForm
             setIsAdding={setIsAdding}
             isAdding={isAdding}
-            certificateList={certificateList}
             setCertificateList={setCertificateList}
             portfolioOwnerId={portfolioOwnerId}
           />
