@@ -1,4 +1,3 @@
-
  
 # 포트폴리오 공유 서비스 프론트엔드 코드
 
@@ -83,7 +82,7 @@ Certificate.js, CertificateAddForm.js, CertificateCard, CertificateEditForm, Cer
 
 
 ##### education MVP
-![[스크린샷 2022-09-01 14.37.15.png]]
+![스크린샷_2022-09-01_14.37.15](/uploads/ed8248ca4e2a4704b39df556fd2e13c7/스크린샷_2022-09-01_14.37.15.png)
 
 EduApp, EduInputForm, EduList, EduUpdate 컴포넌트로 구성되어있습니다. 
 - EduApp : 모든 학력을 나타내는 컴포넌트입니다.
