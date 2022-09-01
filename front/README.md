@@ -110,7 +110,10 @@ AddProjectForm, EditProjectForm, InputForm, Project, ProjectImages 컴포넌트�
 > 
 > 위 요소를 이용하여 유저 프로필 이미지 변경 기능을 구현하였습니다. 
 
-<img src="/uploads/8f241c252dc7817982b27bd28b19d438/스크린샷_2022-09-01_15.45.42.png" width="700" height="auto">
+
+<img src="/uploads/8f241c252dc7817982b27bd28b19d438/스크린샷_2022-09-01_15.45.42.png" width="auto" height="700"> 
+
+
 - 프로젝트 이미지 입력 및 변경  
 > front-end : FormDate  
 > back-end : Multer, Express.static 미들웨어  
