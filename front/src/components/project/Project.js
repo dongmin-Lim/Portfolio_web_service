@@ -49,12 +49,11 @@ const Project = ({ portfolioOwnerId, isEditable }) => {
   //     // console.log(typeof (projects[0].from_date))
   // }, [projects]);
   return (
-    <Card className='p-3 border'>
+    <Card className='p-3 mt-3 border'>
       <Card.Body>
+        <h3>🧑🏻‍💻 프로젝트</h3>
         {!addToggle &&
           <>
-            <h2>🧑🏻‍💻 프로젝트</h2>
-            <div className="dropdown-divider"></div>
             {projects.length === 0 ? <h5 className="mt-5 mb-5" style={{ textAlign: 'center' }}>프로젝트를 등록해주세요 😃</h5> : null}
             <Accordion className='mt-3' defaultActiveKey={0}>
               {projects?.map((v, i) => {

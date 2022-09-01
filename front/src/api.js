@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const backendPortNumber = "3333";
+import { backPort } from "./config";
 const serverUrl =
-  "http://" + window.location.hostname + ":" + backendPortNumber + "/";
+  "http://" + window.location.hostname + ":" + backPort + "/";
 
 async function get(endpoint, params = "") {
   console.log(

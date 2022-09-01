@@ -8,8 +8,13 @@ import Form from 'react-bootstrap/Form';
 import DatePicker from "react-datepicker";
 
 import { Card } from 'react-bootstrap';
+import { backPort } from '../../config';
+import { backServer } from '../../config';
 
 const InputForm = ({ project, setProject, submitHandler, setVisibleToggle }) => {
+
+    const serverUrl =
+        "http://" + window.location.hostname + ":" + backPort + "/";
 
     const CustomDatepickerInput = forwardRef(({ value, onClick }, ref) => (
         <Button variant="outline-primary" className="example-custom-input w-100" onClick={onClick} ref={ref}>{value}</Button>
@@ -40,7 +45,7 @@ const InputForm = ({ project, setProject, submitHandler, setVisibleToggle }) => 
             imageFormData.append('image', f);
         });
         //파일을 입력해 생성한 FormData를 서버에 올리도록 요청
-        axios.post('http://localhost:3333/images', imageFormData)
+        axios.post(serverUrl + 'images', imageFormData)
             .then(res => res.data)
             .then(data => {
                 const temp = [...project?.imagePath, data];
@@ -153,7 +158,8 @@ const InputForm = ({ project, setProject, submitHandler, setVisibleToggle }) => 
                 <div style={{ display: 'flex', overflowX: 'scroll', alignItems: 'flex-end' }}>
                     {project.imagePath?.map((v, i) => (
                         <div key={v} className='me-2' style={{ display: 'flex', flexDirection: 'column' }}>
-                            <img className='mt-2' src={`http://localhost:3333/${v}`} alt={v} style={{ width: '180px', height: '200px', objectFit: 'cover' }}></img>
+                            {/* {serverUrl} */}
+                            <img className='mt-2' src={`${backServer}${backPort}/${v}`} alt='업로드 이미지' style={{ width: '180px', height: '200px', objectFit: 'cover' }}></img>
                             <Button className='mt-2 mb-2' variant="outline-danger" onClick={() => { onRemoveImage(i) }}>삭제</Button>
                         </div>
                     ))}

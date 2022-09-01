@@ -15,15 +15,6 @@ function User({ portfolioOwnerId, isEditable }) {
     Api.get("users", portfolioOwnerId).then((res) => setUser(res.data));
   }, [portfolioOwnerId]);
 
-  // useEffect(() => {
-  //   const dummyUser = {
-  //     name: "euno",
-  //     email: "euno@elice.com",
-  //     description: "안녕하세요",
-  //   };
-  //   setUser(dummyUser);
-  // }, []);
-
   return (
     <>
       {isEditing ? (
