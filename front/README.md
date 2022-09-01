@@ -17,26 +17,9 @@ yarn
 yarn start
 ```
 
-## 파일 구조 설명
+## 파일 구조 설명 
 
-
-1. **src 폴더**
-- Header.js: 네비게이션 바
-- Porfolio.js: 메인 화면을 구성하는, 5개 MVP를 모두 포함하는 컴포넌트
-- award 폴더: 포트폴리오 중 수상이력 관련 컴포넌트들
-- certificate 폴더: 포트폴리오 중 자격증 관련 컴포넌트들
-- education 폴더: 포트폴리오 중 학력 관련 컴포넌트들
-- project 폴더: 포트폴리오 중 프로젝트 관련 컴포넌트들
-- user 폴더: 포트폴리오 중 사용자 관련 컴포넌트들
-- api.js : axios 커스텀 api 제작
-- App.js : 라우터를 이용해 url에 따라 보여질 컴포넌트를 결정
-- reducer.js: 로그인, 로그아웃 사태 관리
-2. **src/component 폴더**
-- 프론트엔드 파트의 핵심 부분인 코드들이 작성됩니다. 
-- component 폴더안에 MVP 폴더(award, acertificate, education, project)를 생성한 후 필요한 컴포넌트를 생성하여 각각의 MVP 컴포넌트를 완성하였습니다.   
-- 작성된 코드의 상태관리는 useState Hooks를 이용하였으며, CSS 라이브러리는 React Bootstrap을 이용하였습니다. 서버통신의 경우 스켈레톤 코드에 작성되어있던 API르 이용해 axios를 그대로 사용하였습니다.
-
-	```
+```
 	front
 	ㄴnode_modules/
 	ㄴpublic/
@@ -55,7 +38,25 @@ yarn start
 		ㄴreducer.js
 	ㄴpackage.json
 	ㄴREADME.md
-	```
+```
+
+1. **src 폴더**
+- Header.js: 네비게이션 바
+- Porfolio.js: 메인 화면을 구성하는, 5개 MVP를 모두 포함하는 컴포넌트
+- award 폴더: 포트폴리오 중 수상이력 관련 컴포넌트들
+- certificate 폴더: 포트폴리오 중 자격증 관련 컴포넌트들
+- education 폴더: 포트폴리오 중 학력 관련 컴포넌트들
+- project 폴더: 포트폴리오 중 프로젝트 관련 컴포넌트들
+- user 폴더: 포트폴리오 중 사용자 관련 컴포넌트들
+- api.js : axios 커스텀 api 제작
+- App.js : 라우터를 이용해 url에 따라 보여질 컴포넌트를 결정
+- reducer.js: 로그인, 로그아웃 사태 관리
+2. **src/component 폴더**
+- 프론트엔드 파트의 핵심 부분인 코드들이 작성됩니다. 
+- component 폴더안에 MVP 폴더(award, acertificate, education, project)를 생성한 후 필요한 컴포넌트를 생성하여 각각의 MVP 컴포넌트를 완성하였습니다.   
+- 작성된 코드의 상태관리는 useState Hooks를 이용하였으며, CSS 라이브러리는 React Bootstrap을 이용하였습니다. 서버통신의 경우 스켈레톤 코드에 작성되어있던 API르 이용해 axios를 그대로 사용하였습니다.
+
+	
 
 ### 필수 기능 구현
 
