@@ -65,7 +65,7 @@ const Project = ({ portfolioOwnerId, isEditable }) => {
                         <h5 style={{ fontWeight: '600' }}>{v.title}</h5>
                         {v?.link && <a style={{ textDecoration: 'none' }}
                           className='ms-2'
-                          href={v.link}
+                          href={v.link.slice(0, 7) === 'http://' ? v.link : 'http://' + v.link}
                           target='_blank'
                           rel="noreferrer">🔗</a>}
                       </div>
