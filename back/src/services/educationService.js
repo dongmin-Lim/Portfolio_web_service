@@ -1,4 +1,4 @@
-import { Education, User } from "../db";
+import { Education } from "../db";
 
 class educationService {
   // 새로운 학력 추가
