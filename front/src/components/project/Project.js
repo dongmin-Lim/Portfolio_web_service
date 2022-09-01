@@ -1,6 +1,8 @@
 import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import * as API from "../../api";
+import "./Project.css";
+import styled from "styled-components";
 
 //bootstrap
 import Button from "react-bootstrap/Button";

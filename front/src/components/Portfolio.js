@@ -102,9 +102,6 @@ function Portfolio() {
             />
           </Col>
         </Row>
-        <Button className="position-fixed top-0 end-0 m-5" onClick={toggleMode}>
-          MODE
-        </Button>
       </Container>
     </>
   );
