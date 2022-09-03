@@ -31,11 +31,12 @@ function App() {
     }
   }, [mode]);
 
-  // useReducer 훅을 통해 userState 상태와 dispatch함수를 생성함.
   const moveTop = () => {
     // TOP버튼 펑션
     window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
   };
+
+  // useReducer 훅을 통해 userState 상태와 dispatch함수를 생성함.
   const [userState, dispatch] = useReducer(loginReducer, {
     user: null,
   });
@@ -98,10 +99,21 @@ function App() {
               <Route path="/network" element={<Network />} />
               <Route path="*" element={<Portfolio />} />
             </Routes>
-            <footer style={{
-              boxShadow: '0px -3px 10px rgba(0,0,0,0.3)',
-              paddingTop: '6px', paddingBottom: '6px', position: 'fixed', bottom: '0px', width: '100vw', backgroundColor: 'Grey', color: 'white', textAlign: 'center'
-            }}>EIIIIE's - 임의연, 임동민, 임지원, 최은오, 송태원, 한혜진</footer>
+            <footer
+              style={{
+                boxShadow: "0px -3px 10px rgba(0,0,0,0.3)",
+                paddingTop: "6px",
+                paddingBottom: "6px",
+                position: "fixed",
+                bottom: "0px",
+                width: "100vw",
+                backgroundColor: "Grey",
+                color: "white",
+                textAlign: "center",
+              }}
+            >
+              EIIIIE's - 임의연, 임동민, 임지원, 최은오, 송태원, 한혜진
+            </footer>
           </Router>
           <Button
             onClick={toggleMode}
